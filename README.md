@@ -14,3 +14,5 @@ Power Sales is powerful omni channel sales agent that could response client inqu
 ![Demo](media/2.png)
 ![Demo](media/3.png)
 ![Demo](media/4.png)
+
+6. Deploy the Power Sales dashboard to Power Apps
