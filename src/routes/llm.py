@@ -7,9 +7,7 @@ from langchain_core.messages import SystemMessage, HumanMessage, AIMessage, Tool
 from langchain_openai import AzureChatOpenAI
 from bs4 import BeautifulSoup
 from dotenv import find_dotenv, load_dotenv
-from regex import F
 from src.model.requestBodyModel import InvokeModel
-from src.utility.function_router import function_router
 from src.utility.database import get_price_from_product_name, get_price_from_sku, get_product, get_user, parse_history, save_user, search_products, thread_init, thread_insert_ai_message, thread_insert_system_message, thread_insert_tool_message, thread_insert_user_message, thread_retrieve
 from src.utility.rag import get_document
 from src.utility.transaction import Cart
@@ -25,7 +23,6 @@ llm_model = AzureChatOpenAI(
     api_key=os.getenv("API_KEY"),
     azure_endpoint=os.getenv("ENDPOINT"),
     api_version=os.getenv("VERSION"),
-    # azure_deployment=os.getenv("DEPLOYMENT_NAME"),
     model=os.getenv("DEPLOYMENT_NAME"),
     max_tokens=8096
 )
@@ -89,8 +86,6 @@ async def invoke(invoke: InvokeModel):
         parallel_tool_calls=True)
 
     tool_mapping = {
-        # "get_product": get_product,
-        # "search_products":search_products,
         "save_user": save_user,
         "get_price_from_sku": get_price_from_sku,
         "get_price_from_product_name": get_price_from_product_name,
