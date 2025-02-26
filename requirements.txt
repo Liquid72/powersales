@@ -1,0 +1,14 @@
+fastapi[standard]
+langchain_core
+langchain-openai
+langchain_community
+python-dotenv
+beautifulsoup4
+PyMongo
+markdown
+azure-search-documents
+azure-identity
+unstructured[docx]
+chromadb
+langchain-chroma>=0.1.2
+pyodbc

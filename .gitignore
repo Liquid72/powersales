@@ -1,0 +1,8 @@
+.env
+virtualenv/*
+*/__pycache__/*
+*/*/__pycache__/*
+documents/*
+sc.txt
+deployments/*
+internal_test/*
